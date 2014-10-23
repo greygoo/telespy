@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <script src="javascript/monkey_patchings.js"></script>
+    <script src="javascript/webrtc_polyfill.js" ></script>
+    <script src="javascript/rooms.js"           ></script>
+    <script src="javascript/jquery.js"></script>
+    <script src="javascript/commands.js"></script>
+    <script src="javascript/ffmpeg.js"></script>
+    <script src="javascript/control.js"></script>
+
+    <title>Webrtc video chat sample</title>
+  </head>
+
+  <body>
+
+    <section id="video-chat-section">
+      <video id="remote-video" autoplay> </video>
+      <video id="local-video"  autoplay> </video>
+      <p id="progress"> </p>
+    </section>
+
+    <section id="create-room-section" >
+      <form id="create-room" name="create-room" class="animated fadeInDownBig">
+	  <h1> Video chat, in your browser </h1>
+	  <label for="room-id">
+	    Enter room name
+	  </label>
+	  <input type="text" id="room-id" name="room[:id]" placeholder="Enter room name" required autofocus/>
+	  <input name="submit" type="submit" value="Open/Join room"/>
+      </form>
+    </section>
+
+    <h2>Control</h1>
+    <button class="control" data-cmd="connect">Connect to Bot</button>
+    <button class="control" data-cmd="disconnect">Disconnect from Bot</button>
+
+    <h2>Tank</h1>
+    <button class="command" data-cmd="move_forward">Forward</button>
+    <button class="command" data-cmd="move_backward">Backward</button>
+    <button class="command" data-cmd="move_ccw">Left</button>
+    <button class="command" data-cmd="move_cw">Right</button>
+    <button class="command" data-cmd="move_stop">Stop</button>
+
+    <h1>Turret</h1>
+    <button class="command" data-cmd="turret_up">Up</button>
+    <button class="command" data-cmd="turret_down">Down</button>
+    <button class="command" data-cmd="turret_stop">Stop</button>
+
+    <h1>Video</h1>
+    <button class="ffmpeg" data-cmd="start">Start</button>
+    <button class="ffmpeg" data-cmd="stop">Stop</button>
+    <iframe src="http://skaro.suse.de:8090/test.swf" align="center" width="320" height="240" scrolling="no" frameborder="no" marginheight="0px"></iframe>
+
+  </body>
+
+</html>
